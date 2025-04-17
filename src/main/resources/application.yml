@@ -1,0 +1,25 @@
+spring:
+  profiles:
+    active: ${ACTIVE_PROFILE:local}
+  application:
+    name: grpc-server
+    version: 1.0.0
+    description: A simple gRPC server example
+
+  server:
+    port: 8080
+    
+  data:
+    web:
+      pageable:
+        one-indexed-parameters: true
+        max-page-size: 200
+    mongodb:
+      uri: mongodb+srv://${MONGODB_USER}:${MONGODB_PASSWORD}@${MONGODB_HOST}/?retryWrites=true&w=majority&appName=Cluster0
+      database: ${MONGODB_DATABASE}
+      auto-index-creation: true
+
+grpc:
+  server:
+    port: 9090
+    enable-reflection: true

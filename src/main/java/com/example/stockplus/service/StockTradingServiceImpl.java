@@ -19,6 +19,10 @@ public class StockTradingServiceImpl extends StockTradingServiceGrpc.StockTradin
         this.stockRepository = stockRepository;
     }
 
+    public String getStockSample() {
+        return "hello";
+    }
+
     @Override
     public void getStockPrice(StockRequest request,
                               StreamObserver<StockResponse> responseObserver) {
